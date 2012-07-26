@@ -1,6 +1,7 @@
 *.DS_Store
 *.swp
 *.bak
+/.ApacheDirectoryStudio
 /.CFUserTextEncoding
 /.ICEauthority
 /.Trash
@@ -20,6 +21,7 @@
 /.codeintel
 /.config
 /.cups
+/.datastudio
 /.dbus
 /.ddd
 /.dmrc
