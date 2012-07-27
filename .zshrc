@@ -44,9 +44,6 @@ export SAVEHIST=$HISTSIZE
 
 export EDITOR=vi
 
-# Have zsh command entry be vim-style
-bindkey -v
-
 export WORDCHARS='*?[]~&;!$%^<>'
 
 export ACK_COLOR_MATCH='red'
