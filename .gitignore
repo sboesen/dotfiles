@@ -117,6 +117,7 @@
 /.xsession-errors
 /.Xauthority
 /Applications
+/Archive
 /Desktop
 /Documents
 /Downloads
@@ -128,6 +129,7 @@
 /Music
 /Pictures
 /Public
+/Reading
 /Sites
 /VirtualBox\ VMs
 /bin/rvm
@@ -145,6 +147,7 @@
 /media
 /misc.sparsebundle
 /node_modules
+/prog
 /proj
 /purchases
 /reference
