@@ -80,6 +80,7 @@
 /.pypirc
 /.python-eggs
 /.rbx
+/.rediscli_history
 /.rnd
 /.rubinius_last_error
 /.rvm
