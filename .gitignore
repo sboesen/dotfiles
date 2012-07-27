@@ -7,6 +7,8 @@
 /.Trash
 /.account
 /.adobe
+/.af_instances
+/.af_token
 /.bashrc
 /.bash_history
 /.bash_login
