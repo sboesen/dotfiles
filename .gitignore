@@ -99,6 +99,7 @@
 /.tmp
 /.toot
 /.tox
+/.vagrant.d
 /.vboxclient-clipboard.pid
 /.vboxclient-display.pid
 /.vboxclient-seamless.pid
