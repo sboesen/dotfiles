@@ -13,6 +13,11 @@ def in_git_repo
   git_repo_path != "#{ENV['HOME']}/.git"
 end
 
+def in_working_tree
+  working_tree = `git rev-parse --is-inside-work-tree`.chomp
+  return working_tree == 'true'
+end
+
 def git_parse_branch
   @git_parse_branch ||= File.read("#{git_repo_path}/HEAD").strip.scan(/refs\/heads\/(.*)$/).flatten.first
 end
@@ -35,6 +40,6 @@ def rebasing_etc
   end
 end
 
-if in_git_repo
+if in_git_repo && in_working_tree 
   print " %{\e[34m%}#{git_parse_branch}%{\e[90m%}@%{\e[33m%}#{git_head_commit_id}%{\e[0m%}#{rebasing_etc}#{git_cwd_dirty}"
 end
