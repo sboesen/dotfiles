@@ -64,8 +64,6 @@ alias t="script/test $*"
 alias f="script/features $*"
 alias g="bundle exec guard $*"
 alias sr="screen -r"
-alias gx="gitx"
-alias gxa="gitx --all"
 alias vim="mvim -v"
 
 function mcd() { mkdir -p $1 && cd $1 }
