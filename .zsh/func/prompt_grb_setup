@@ -12,6 +12,8 @@ prompt_grb_help () {
 EOF
 }
 
+
+
 revstring() {
 	git describe --always $1 2>/dev/null ||
 	git rev-parse --short $1 2>/dev/null
@@ -181,6 +183,7 @@ prompt_grb_setup() {
     #fi
     #RPROMPT+="$pc[user]%n$pc[reset]"
     #RPROMPT+=" $p_line"
+    RPROMPT=$'%{\e[0;90m%}$(git_cwd_info)%{\e[0m%}'
 
 	export PROMPT RPROMPT
 	precmd_functions+='prompt_wunjo_precmd'
@@ -307,7 +310,7 @@ prompt_wunjo_scm_branch() {
 	local -A pc
 	pc=(${(kv)wunjo_prompt_colors})
 
-	echo -n "$pc[punc]$pc[scm_branch]$(zgit_head)"
+	echo -n "$pc[punc]$pc[scm_branch]"
 
 	if zgit_inworktree; then
 		if ! zgit_isindexclean; then
