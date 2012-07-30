@@ -1,12 +1,12 @@
 # Aliases
 alias g='git'
 compdef g=git
-alias gst='git status'
-compdef _git gst=git-status
-alias gl='git pull'
-compdef _git gl=git-pull
+alias gst='git status -s'
+compdef _git gst=git-status -s
 alias gup='git fetch && git rebase'
 compdef _git gup=git-fetch
+alias gpl='git pull'
+compdef _git gpl=git-pull
 alias gp='git push'
 compdef _git gp=git-push
 gdv() { git diff -w "$@" | view - }
@@ -26,15 +26,17 @@ alias gcount='git shortlog -sn'
 compdef gcount=git
 alias gcp='git cherry-pick'
 compdef _git gcp=git-cherry-pick
-alias glg='git log --stat --max-count=5'
+alias glg='git log --date-order --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"'
 compdef _git glg=git-log
-alias glgg='git log --graph --max-count=5'
+alias glgg='git log --date-order --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset" --graph'
 compdef _git glgg=git-log
 alias gss='git status -s'
 compdef _git gss=git-status
 alias ga='git add'
 compdef _git ga=git-add
-alias gm='git merge'
+alias gm='git merge --no-ff'
+compdef _git gm=git-merge
+alias gmf='git merge --ff-only'
 compdef _git gm=git-merge
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
