@@ -10,6 +10,11 @@ for plugin ($plugins); do
   fpath=(~/.zsh_plugins/$plugin $fpath)
 done
 
+## case-insensitive (all),partial-word and then substring completion
+# From http://www.rlazo.org/2010/11/18/zsh-case-insensitive-completion/
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
+        'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 
 autoload -U compinit
 compinit
