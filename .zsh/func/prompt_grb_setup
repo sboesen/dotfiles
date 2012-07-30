@@ -174,7 +174,7 @@ prompt_grb_setup() {
 #"
 	#PROMPT+="($pc[hist]%h$pc[reset])"
 	PROMPT+=":$pc[shortpath]%1~$pc[reset]"
-    PROMPT+="($pc[scm_branch]\$(prompt_wunjo_scm_branch)$pc[reset])"
+    PROMPT+="$pc[scm_branch]\$(prompt_wunjo_scm_branch)$pc[reset]"
 	PROMPT+=" $pc[#]\$$pc[reset] "
 
     #RPROMPT=
@@ -313,6 +313,8 @@ prompt_wunjo_scm_branch() {
 	echo -n "$pc[punc]$pc[scm_branch]"
 
 	if zgit_inworktree; then
+	    echo -n $pc[reset]
+        echo -n ' ('
 		if ! zgit_isindexclean; then
 			echo -n "$pc[scm_status_staged]+"
 		fi
@@ -333,6 +335,8 @@ prompt_wunjo_scm_branch() {
 		if [ $#dirty -gt 0 ]; then
 			echo -n "$pc[scm_status_dirty]${(j::)dirty}"
 		fi
+        echo -n $pc[reset]
+        echo -n ')'
 	fi
 
 	echo $pc[reset]
