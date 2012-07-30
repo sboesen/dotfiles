@@ -313,8 +313,6 @@ prompt_wunjo_scm_branch() {
 	echo -n "$pc[punc]$pc[scm_branch]"
 
 	if zgit_inworktree; then
-	    echo -n $pc[reset]
-        echo -n ' ('
 		if ! zgit_isindexclean; then
 			echo -n "$pc[scm_status_staged]+"
 		fi
@@ -333,10 +331,12 @@ prompt_wunjo_scm_branch() {
 		fi
 
 		if [ $#dirty -gt 0 ]; then
+            echo -n $pc[reset]
+            echo -n ' ('
 			echo -n "$pc[scm_status_dirty]${(j::)dirty}"
+            echo -n $pc[reset]
+            echo -n ')'
 		fi
-        echo -n $pc[reset]
-        echo -n ')'
 	fi
 
 	echo $pc[reset]
