@@ -97,6 +97,7 @@
 /.sshterm
 /.ssl
 /.subversion
+/.tarsnap
 /.tmp
 /.toot
 /.tox
