@@ -104,6 +104,6 @@ function up()
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-
+export LSCOLORS=exfxcxdxbxegedabagacad
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
