@@ -382,3 +382,7 @@ command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 " Map <C-f> to Command-T
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-f> :CommandT<cr>
+
+
+" Fancy
+let g:Powerline_symbols = 'fancy'
