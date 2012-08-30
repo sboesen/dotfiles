@@ -107,6 +107,7 @@
 /.vboxclient-seamless.pid
 /.vim-tmp
 /.vim/.netrwhist
+/.vim/.netrwbook
 /.vim-fuf-data
 /.vimfuzzyfinder
 /.viminfo
