@@ -64,7 +64,8 @@ alias t="script/test $*"
 alias f="script/features $*"
 alias g="bundle exec guard $*"
 alias sr="screen -r"
-
+alias lla="ls -la"
+alias la=lla
 if [ $(uname -s) = 'Darwin' ]; then
     alias vim="mvim -v"
 fi
