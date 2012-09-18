@@ -36,7 +36,6 @@ export PATH=$PATH:/usr/local/pgsql/bin
 export PATH=$PATH:/Library/PostgreSQL/8.3/bin
 
 # Unbreak broken, non-colored terminal
-export TERM='xterm-color'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias duh='du -csh'
