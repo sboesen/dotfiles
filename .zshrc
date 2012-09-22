@@ -4,6 +4,15 @@ autoload -U promptinit
 promptinit
 prompt grb
 
+# Detect OS
+platform='unknown'
+unamestr=$(uname)
+if [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   platform='osx'
+fi
+
 plugins=(git rails3 autojump rvm zsh-syntax-highlighting)
 
 for plugin ($plugins); do
@@ -41,6 +50,11 @@ alias ll='ls -lG'
 alias duh='du -csh'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
+
+# Unbreak tmux/screen colors on Linux
+if [[ $platform == 'linux' ]]; then
+    export TERM=screen-256color
+fi
 
 # Unbreak history
 export HISTSIZE=100000
