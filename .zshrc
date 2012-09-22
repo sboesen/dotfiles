@@ -80,7 +80,7 @@ alias sr="screen -r"
 alias lla="ls -la"
 alias la=lla
 alias cls="clear"
-if [ $(uname -s) = 'Darwin' ]; then
+if [[ $platform == 'osx' ]]; then
     alias vim="mvim -v"
 fi
 
