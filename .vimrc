@@ -386,3 +386,11 @@ map <C-f> :CommandT<cr>
 
 " Fancy
 let g:Powerline_symbols = 'fancy'
+
+" Set minimum window sizes
+set winheight=30
+set winminheight=5
+set winwidth=150
+set winminwidth=20
+set noequalalways
+
