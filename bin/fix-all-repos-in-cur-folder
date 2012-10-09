@@ -1,0 +1,2 @@
+#!/bin/bash
+for i in $(ls); do cd $i; rename-remote; cd ..; done
