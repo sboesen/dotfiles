@@ -383,9 +383,13 @@ command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-f> :CommandT<cr>
 
+"OS detection
+let os = substitute(system('uname'), "\n", "", "")
+if os == "Darwin"
+  " Fancy vim thing (requires patched font)
+  let g:Powerline_symbols = 'fancy'
+endif
 
-" Fancy
-let g:Powerline_symbols = 'fancy'
 
 " Set minimum window sizes
 set winheight=30
