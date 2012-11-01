@@ -56,6 +56,7 @@ if [[ $platform == 'linux' ]]; then
     export TERM=screen-256color
 fi
 
+
 # Unbreak history
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
@@ -122,3 +123,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export LSCOLORS=exfxcxdxbxegedabagacad
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+if [[ $platform == 'osx' ]]; then
+    export PATH="$HOME/.cw/def:$PATH"
+fi
