@@ -10,6 +10,7 @@
 /.adobe
 /.af_instances
 /.af_token
+/.antiword
 /.bashrc
 /.bash_history
 /.bash_login
@@ -116,6 +117,7 @@
 /.vim-fuf-data
 /.vimfuzzyfinder
 /.viminfo
+/.vimperator
 /.vimprojects
 /.vimrc.backup
 /.vimrc.old
