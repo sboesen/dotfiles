@@ -11,9 +11,6 @@
 [submodule ".vim/bundle/L9"]
 	path = .vim/bundle/L9
 	url = https://github.com/vim-scripts/L9
-[submodule ".vim/bundle/vim-fuzzyfinder"]
-	path = .vim/bundle/vim-fuzzyfinder
-	url = https://github.com/clones/vim-fuzzyfinder
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
@@ -32,3 +29,6 @@
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/vim-afterimage"]
+	path = .vim/bundle/vim-afterimage
+	url = git://github.com/tpope/vim-afterimage.git
