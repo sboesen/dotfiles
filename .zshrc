@@ -46,7 +46,7 @@ export PATH=$PATH:/Library/PostgreSQL/8.3/bin
 
 # Unbreak broken, non-colored terminal
 alias ls='ls -G'
-alias ll='ls -lG'
+alias ll='ls -lAG'
 alias duh='du -csh'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
