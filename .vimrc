@@ -386,7 +386,8 @@ map <C-f> :CommandT<cr>
 
 "OS detection
 let os = substitute(system('uname'), "\n", "", "")
-if os == "Darwin"
+
+if os == "Darwin" && (hostname() == "mba" || hostname() == "mba.evergreen.edu")
   " Fancy vim thing (requires patched font)
   let g:Powerline_symbols = 'fancy'
 endif
