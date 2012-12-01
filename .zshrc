@@ -1,4 +1,5 @@
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/games/bin:/usr/local/share/npm/bin:$PATH
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 setopt promptsubst
 autoload -U promptinit
 promptinit
@@ -122,7 +123,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export LSCOLORS=exfxcxdxbxegedabagacad
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 if [[ $platform == 'osx' ]]; then
     export PATH="$HOME/.cw/def:$PATH"
