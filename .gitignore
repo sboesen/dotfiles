@@ -81,6 +81,7 @@
 /.node-gyp
 /.npm
 /.pam_mount.conf.xml
+/.phantom
 /.pip
 /.pow
 /.profile
