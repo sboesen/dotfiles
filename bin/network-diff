@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require 'colored'
+
+arg = ARGV.shift
+if (arg.nil? || arg == '-h')
+  puts "Usage: network-diff     10.17.2.1"
+  puts "       In order to scan 10.17.2.1/24"
+  exit -1
+end
+
+first_scan = %x[nmap -sn #{arg}/24 | grep 'Nmap scan report']
+first_scan.gsub!("Nmap scan report for ", "")
+first_scan = first_scan.split("\n")
+
+print "First scan complete. Press return when ready for scan two: "
+gets
+
+second_scan = %x[nmap -sn #{arg}/24 | grep 'Nmap scan report']
+second_scan.gsub!("Nmap scan report for ", "")
+second_scan = second_scan.split("\n")
+
+puts "Second scan complete. Results: "
+
+puts "Items that went down: ".red
+puts (first_scan - second_scan).join("\n").red
+
+puts "Items that went up: ".green
+puts (second_scan - first_scan).join("\n").green
