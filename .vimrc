@@ -400,3 +400,4 @@ set winwidth=150
 set winminwidth=20
 set noequalalways
 
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
