@@ -401,3 +401,5 @@ set winminwidth=20
 set noequalalways
 
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+
+nmap <leader>gs :Gstatus<CR><C-w>20+
