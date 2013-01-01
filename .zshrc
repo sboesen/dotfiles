@@ -127,3 +127,6 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 if [[ $platform == 'osx' ]]; then
     export PATH="$HOME/.cw/def:$PATH"
 fi
+
+# Set vim as our man pager
+export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -"
