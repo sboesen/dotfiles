@@ -115,6 +115,7 @@
 /.vboxclient-display.pid
 /.vboxclient-seamless.pid
 /.vim-tmp
+/.vim/doc
 /.vim/.netrwhist
 /.vim/.netrwbook
 /.vim-fuf-data
