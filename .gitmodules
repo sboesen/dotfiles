@@ -5,30 +5,40 @@
 [submodule ".vim/bundle/vim-makegreen"]
 	path = .vim/bundle/vim-makegreen
 	url = git@github.com:garybernhardt/vim-makegreen.git
+    ignore = untracked
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
+    ignore = untracked
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
+    ignore = untracked
 [submodule ".vim/bundle/vim-ruby"]
 	path = .vim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+    ignore = untracked
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+    ignore = untracked
 [submodule ".vim/bundle/vim-eunuch"]
 	path = .vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+    ignore = untracked
 [submodule ".vim/bundle/vim-matchit"]
 	path = .vim/bundle/vim-matchit
 	url = https://github.com/tsaleh/vim-matchit.git
+    ignore = untracked
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+    ignore = untracked
 [submodule ".vim/bundle/vim-afterimage"]
 	path = .vim/bundle/vim-afterimage
 	url = git://github.com/tpope/vim-afterimage.git
+    ignore = untracked
 [submodule ".vim/bundle/vimball"]
 	path = .vim/bundle/vimball
 	url = git://github.com/vim-scripts/Vimball.git
+    ignore = untracked
