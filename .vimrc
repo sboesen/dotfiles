@@ -403,3 +403,6 @@ set noequalalways
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
 nmap <leader>gs :Gstatus<CR><C-w>20+
+
+let g:ConqueTerm_InsertOnEnter = 0
+let g:ConqueTerm_CWInsert = 1
