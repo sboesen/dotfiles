@@ -406,3 +406,6 @@ nmap <leader>gs :Gstatus<CR><C-w>20+
 
 let g:ConqueTerm_InsertOnEnter = 0
 let g:ConqueTerm_CWInsert = 1
+
+map <C-h> :cprevious<cr>
+map <C-l> :cnext<cr>
