@@ -395,9 +395,9 @@ endif
 
 " Set minimum window sizes
 set winheight=30
-set winminheight=5
+set winminheight=2
 set winwidth=150
-set winminwidth=20
+set winminwidth=2
 set noequalalways
 
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
