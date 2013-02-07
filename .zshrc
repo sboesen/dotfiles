@@ -82,6 +82,7 @@ alias sr="screen -r"
 alias lla="ls -la"
 alias la=lla
 alias cls="clear"
+alias rcp="rails-console-pry -r pry-doc -r awesome_print"
 if [[ $platform == 'osx' ]]; then
     alias vim="mvim -v"
 fi
