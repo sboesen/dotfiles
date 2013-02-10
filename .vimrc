@@ -96,8 +96,8 @@ augroup END
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256 " 256 colors
-:set background=dark
-":color grb256
+:set background=light
+:let g:solarized_contrast="high"
 :color solarized
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -409,3 +409,4 @@ let g:ConqueTerm_CWInsert = 1
 
 map <C-h> :cprevious<cr>
 map <C-l> :cnext<cr>
+
