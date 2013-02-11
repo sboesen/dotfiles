@@ -126,21 +126,6 @@ call MapCR()
 nnoremap <leader><leader> <c-^>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MULTIPURPOSE TAB KEY
-" Indent if we're at the beginning of a line. Else, do completion.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <Left> <Nop>
@@ -409,4 +394,62 @@ let g:ConqueTerm_CWInsert = 1
 
 map <C-h> :cprevious<cr>
 map <C-l> :cnext<cr>
+
+
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_max_list = 15
+
+" Scroll through options with C-j and C-k
+inoremap <C-j> <c-n>
+inoremap <C-k> <c-p>
+
+" Define keyword.
+        if !exists('g:neocomplcache_keyword_patterns')
+            let g:neocomplcache_keyword_patterns = {}
+        endif
+        let g:neocomplcache_keyword_patterns._ = '\h\w*'
+
+" Plugin key-mappings.
+        imap <C-k> <Plug>(neosnippet_expand_or_jump)
+        smap <C-k> <Plug>(neosnippet_expand_or_jump)
+        inoremap <expr><C-g> neocomplcache#undo_completion()
+        inoremap <expr><C-l> neocomplcache#complete_common_string()
+        inoremap <expr><CR> neocomplcache#complete_common_string()
+
+" <TAB>: completion.
+        inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+        inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+
+" <CR>: close popup
+" <s-CR>: close popup and save indent.
+        inoremap <expr><s-CR> pumvisible() ? neocomplcache#close_popup()"\<CR>" : "\<CR>"
+        inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+
+" <C-h>, <BS>: close popup and delete backword char.
+        inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+        inoremap <expr><C-y> neocomplcache#close_popup()
+
+" Enable omni completion.
+        autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+        autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+        autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+        autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+        autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+" Enable heavy omni completion.
+        if !exists('g:neocomplcache_omni_patterns')
+            let g:neocomplcache_omni_patterns = {}
+        endif
+        let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+        let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+        let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+        let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+        let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+
+" Use honza's snippets.
+        let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
 
