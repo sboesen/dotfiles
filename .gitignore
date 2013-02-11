@@ -84,6 +84,7 @@
 /.pam_mount.conf.xml
 /.pip
 /.pow
+/.private
 /.profile
 /.pry_history
 /.psql_history
