@@ -51,3 +51,6 @@
 [submodule ".vim/bundle/snipmate-snippets"]
 	path = .vim/bundle/snipmate-snippets
 	url = git://github.com/honza/snipmate-snippets.git
+[submodule ".vim/bundle/vim-tomorrow-theme"]
+	path = .vim/bundle/vim-tomorrow-theme
+	url = git://github.com/chriskempson/vim-tomorrow-theme.git
