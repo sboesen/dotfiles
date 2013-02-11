@@ -452,3 +452,6 @@ inoremap <C-k> <c-p>
 " Use honza's snippets.
         let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
 
+
+" LustyBuffer binding
+map <C-b> :LustyJuggler<cr>
