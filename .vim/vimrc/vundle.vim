@@ -19,3 +19,6 @@ Bundle 'honza/snipmate-snippets'
 " Colorschemes
 Bundle 'sboesen/vim-tomorrow-theme'
 Bundle 'altercation/vim-colors-solarized'
+
+" Searching
+Bundle 'mileszs/ack.vim'

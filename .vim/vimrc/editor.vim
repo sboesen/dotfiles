@@ -74,3 +74,6 @@ set gdefault
 " Ignore case in search unless at least one uppercase letter is in search
 set ignorecase
 set smartcase
+
+" Set our search program in ack.vim to be ag
+let g:ackprg = 'ag --nogroup --nocolor --column'
