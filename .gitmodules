@@ -53,7 +53,7 @@
 	url = git://github.com/honza/snipmate-snippets.git
 [submodule ".vim/bundle/vim-tomorrow-theme"]
 	path = .vim/bundle/vim-tomorrow-theme
-	url = git://github.com/chriskempson/vim-tomorrow-theme.git
+	url = git://github.com/sboesen/vim-tomorrow-theme.git
 [submodule ".vim/bundle/LustyJuggler"]
 	path = .vim/bundle/LustyJuggler
 	url = git://github.com/vim-scripts/LustyJuggler.git
