@@ -14,7 +14,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    platform='osx'
 fi
 
-plugins=(git rails3 autojump rvm zsh-syntax-highlighting)
+plugins=(git rails3 autojump rvm zsh-syntax-highlighting zeus)
 
 for plugin ($plugins); do
   fpath=(~/.zsh_plugins/$plugin $fpath)
