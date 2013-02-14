@@ -22,3 +22,6 @@ Bundle 'altercation/vim-colors-solarized'
 
 " Searching
 Bundle 'mileszs/ack.vim'
+
+" Gundo graphical undo history
+Bundle 'sjl/gundo.vim'
