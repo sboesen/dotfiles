@@ -1,23 +1,5 @@
 #!/usr/bin/env sh
 
-warn() {
-    echo "$1" >&2
-}
-
-die() {
-    warn "$1"
-    exit 1
-}
-
-lnif() {
-    if [ ! -e $2 ] ; then
-        ln -s $1 $2
-    fi
-    if [ -L $2 ] ; then
-        ln -sf $1 $2
-    fi
-}
-
 # Backup existing .vim stuff
 
 echo "THIS SCRIPT WILL NOT BACK UP YOUR SHIT. IF YOU NEED A BACKUP OF YOUR .git, .vimrc, .zshrc COPY THE LINE BELOW AND RUN IT."
