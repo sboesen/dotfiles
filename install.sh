@@ -55,4 +55,7 @@ cd $HOME/.vim/bundle/Command-T/ruby/command-t/
 make
 cd
 echo "Done installing!"
-rm $HOME/install.sh install.sh
+rm $HOME/install.sh
+rm $HOME/README.md
+git update-index --assume-unchanged $HOME/install.sh
+git update-index --assume-unchanged $HOME/README.md
