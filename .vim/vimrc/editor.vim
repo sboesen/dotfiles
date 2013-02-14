@@ -67,3 +67,10 @@ set relativenumber
 
 " Preserve undo information between open/closes
 set undofile
+
+" Default to global substitution
+set gdefault
+
+" Ignore case in search unless at least one uppercase letter is in search
+set ignorecase
+set smartcase
