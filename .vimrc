@@ -20,3 +20,7 @@ source $HOME/.vim/vimrc/autocomplete.vim
 source $HOME/.vim/vimrc/editor.vim
 source $HOME/.vim/vimrc/mappings.vim
 source $HOME/.vim/vimrc/misc_commands.vim
+
+if filereadable($HOME . "/.vimrc.after")
+    source $HOME/.vimrc.after
+endif
