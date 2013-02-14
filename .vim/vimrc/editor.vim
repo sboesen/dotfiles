@@ -57,3 +57,6 @@ set winwidth=79
 set noequalalways
 
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+
+" Prevent modeline spells from being executed
+set modelines=0
