@@ -33,6 +33,7 @@ set scrolloff=3
 " Store temporary files in a central spot
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set undodir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp/,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -60,3 +61,9 @@ au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
 " Prevent modeline spells from being executed
 set modelines=0
+
+" Relative line numbers. The real number is in statusbar anyway
+set relativenumber 
+
+" Preserve undo information between open/closes
+set undofile
