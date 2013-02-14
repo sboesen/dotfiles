@@ -58,6 +58,8 @@ set wildmode=longest,list
 set wildmenu
 let mapleader=","
 
+source $HOME/.vim/vimrc/vundle.vim
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -401,3 +403,4 @@ inoremap <C-k> <C-p>
 
 source $HOME/.vim/vimrc/autocomplete.vim
 source $HOME/.vim/vimrc/mappings.vim
+
