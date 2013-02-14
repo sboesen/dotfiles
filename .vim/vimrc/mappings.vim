@@ -67,3 +67,13 @@ inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> neocomplcache#close_popup()
 
+" Scroll through options with C-j and C-k
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
+
+" <leader>gs to Fugitive Git Status
+nmap <leader>gs :Gstatus<CR><C-w>20+
+
+" Easier cnext/cprev
+map <C-h> :cprevious<cr>
+map <C-l> :cnext<cr>

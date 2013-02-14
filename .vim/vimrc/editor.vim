@@ -50,3 +50,10 @@ set wildmode=longest,list
 " make tab completion for files/buffers act like bash
 set wildmenu
 let mapleader=","
+
+" Set current window width
+set winwidth=79
+
+set noequalalways
+
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
