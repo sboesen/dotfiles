@@ -25,3 +25,6 @@ Bundle 'mileszs/ack.vim'
 
 " Gundo graphical undo history
 Bundle 'sjl/gundo.vim'
+
+" Nice commenting with \\\
+Bundle 'scrooloose/nerdcommenter'
