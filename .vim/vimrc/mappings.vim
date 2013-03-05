@@ -71,7 +71,3 @@ nmap <leader>gs :Gstatus<CR><C-w>20+
 " Easier cnext/cprev
 map <C-h> :cprevious<cr>
 map <C-l> :cnext<cr>
-
-" Disable vim regex by default
-nnoremap / /\v
-vnoremap / /\v
