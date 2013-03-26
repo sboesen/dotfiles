@@ -77,3 +77,6 @@ set smartcase
 
 " Set our search program in ack.vim to be ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Disable neosnippet preview window. Really distracting
+set completeopt-=preview 
