@@ -14,7 +14,7 @@ Bundle 'tpope/vim-fugitive'
 " Autocomplete and snippets
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
-Bundle 'honza/snipmate-snippets'
+Bundle 'sboesen/snipmate-snippets'
 
 " Colorschemes
 Bundle 'sboesen/vim-tomorrow-theme'
