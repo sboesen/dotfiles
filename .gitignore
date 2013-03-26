@@ -112,7 +112,6 @@
 /.ssl
 /.subversion
 /.tarsnap
-/.tarsnaprc
 /.tmp
 /.toot
 /.tox
