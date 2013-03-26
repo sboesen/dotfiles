@@ -34,3 +34,5 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 
 " Use honza's snippets.
 let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
