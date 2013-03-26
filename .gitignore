@@ -68,6 +68,8 @@
 /.irb-history
 /.irb_history
 /.irssi
+/.itmstransporter
+/.keyfile
 /.lesshst
 /.lldb-history
 /.local
@@ -78,6 +80,7 @@
 /.mysql_history
 /.ncmpcpp
 /.neocon
+/.neocomplcache
 /.netrc
 /.network_backups
 /.node-gyp
@@ -109,6 +112,7 @@
 /.ssl
 /.subversion
 /.tarsnap
+/.tarsnaprc
 /.tmp
 /.toot
 /.tox
