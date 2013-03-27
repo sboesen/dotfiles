@@ -25,6 +25,7 @@
 /.cache
 /.certs
 /.cheat
+/.cocoapods
 /.codeintel
 /.config
 /.cups
