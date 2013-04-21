@@ -10,9 +10,14 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" Start/end of line with H and L
+nnoremap H 0
+nnoremap L $
 "
 " Map ;; => escape
-imap ;; <esc>
+inoremap jk <esc>
+inoremap <esc> <Nop>
 
 " Clear the search buffer when hitting return
 function! MapCR()
@@ -36,6 +41,8 @@ map <leader>v :view %%<cr>
 
 " Map <C-f> to Command-T
 map <C-f> :CommandT<cr>
+map <C-b> :CommandTBuffer<cr>
+map <C-t> :CommandTTag<cr>
 
 " =================================================
 " neocomplcache mappings 
