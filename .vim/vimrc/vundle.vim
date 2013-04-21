@@ -10,13 +10,27 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-sleuth'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
 
-" Autocomplete and snippets
+Bundle 'airblade/vim-rooter'
+
+"" Autocomplete and snippets
 Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
-Bundle 'sboesen/snipmate-snippets'
+"Bundle 'Shougo/neosnippet'
+"Bundle 'sboesen/snipmate-snippets'
+"
+Bundle 'sboesen/vim-autotags'
+Bundle 'majutsushi/tagbar'
+Bundle 'tmallen/proj-vim'
+"Bundle 'Valloric/YouCompleteMe'
 
 " Colorschemes
+Bundle 'sboesen/vim-less-colorscheme'
 Bundle 'sboesen/vim-tomorrow-theme'
 Bundle 'altercation/vim-colors-solarized'
 
