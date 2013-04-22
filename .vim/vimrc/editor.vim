@@ -77,3 +77,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Disable neosnippet preview window. Really distracting
 set completeopt-=preview 
+
+" Configure Ctrl-A and Ctrl-X to assume number is decimal
+set nrformats-=octal
+
