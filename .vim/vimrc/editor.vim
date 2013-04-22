@@ -81,3 +81,6 @@ set completeopt-=preview
 " Configure Ctrl-A and Ctrl-X to assume number is decimal
 set nrformats-=octal
 
+" Enable matchit plugin
+filetype plugin on
+runtime macros/matchit.vim
