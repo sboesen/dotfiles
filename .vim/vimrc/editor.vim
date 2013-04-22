@@ -84,3 +84,6 @@ set nrformats-=octal
 " Enable matchit plugin
 filetype plugin on
 runtime macros/matchit.vim
+
+" Disable file browser for proj.vim
+let g:ProjFileBrowser = 'off'
