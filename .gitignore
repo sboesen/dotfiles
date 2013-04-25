@@ -112,6 +112,7 @@
 /.sshterm
 /.ssl
 /.subversion
+/.sudo_as_admin_successful
 /.tarsnap
 /.tmp
 /.toot
