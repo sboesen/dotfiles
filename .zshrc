@@ -74,10 +74,6 @@ gdc() { gd --cached $*; }
 alias pygrep="grep --include='*.py' $*"
 alias rbgrep="grep --include='*.rb' $*"
 alias r=rails
-alias t="script/test $*"
-alias f="script/features $*"
-alias g="bundle exec guard $*"
-alias sr="screen -r"
 alias lla="ls -la"
 alias la=lla
 alias cls="clear"
@@ -164,3 +160,8 @@ function zle-line-finish () {
 }
 zle -N zle-line-init
 zle -N zle-line-finish  
+
+
+if [ -f ~/.zshrc.after ]; then
+  source ~/.zshrc.after
+fi
