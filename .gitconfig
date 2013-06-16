@@ -50,3 +50,5 @@
 	default = current
 [core]
 	sharedRepository = group
+[github]
+	user = sboesen
