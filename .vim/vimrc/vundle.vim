@@ -17,17 +17,25 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 
+Bundle 'gerw/vim-HiLinkTrace'
+
+" Text Objects
+Bundle 'paradigm/TextObjectify'
+Bundle 'vim-scripts/argtextobj.vim'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'bkad/CamelCaseMotion'
+
 Bundle 'airblade/vim-rooter'
 
 "" Autocomplete and snippets
-Bundle 'Shougo/neocomplcache'
+"Bundle 'Shougo/neocomplcache'
 "Bundle 'Shougo/neosnippet'
 "Bundle 'sboesen/snipmate-snippets'
 "
 Bundle 'sboesen/vim-autotags'
 Bundle 'majutsushi/tagbar'
 Bundle 'tmallen/proj-vim'
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'vim-ruby/vim-ruby'
 
 " Colorschemes
 Bundle 'sboesen/vim-less-colorscheme'
