@@ -17,6 +17,9 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 
+" Auto view tiling
+Bundle 'zhaocai/GoldenView.Vim'
+
 Bundle 'gerw/vim-HiLinkTrace'
 
 " Text Objects
