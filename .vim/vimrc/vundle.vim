@@ -20,6 +20,9 @@ Bundle 'tpope/vim-repeat'
 " Auto view tiling
 Bundle 'zhaocai/GoldenView.Vim'
 
+" Gutter changes from Version Control
+Bundle 'mhinz/vim-signify'
+
 Bundle 'gerw/vim-HiLinkTrace'
 
 " Text Objects
@@ -44,6 +47,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'sboesen/vim-less-colorscheme'
 Bundle 'sboesen/vim-tomorrow-theme'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'w0ng/vim-hybrid'
 
 " Searching
 Bundle 'mileszs/ack.vim'
