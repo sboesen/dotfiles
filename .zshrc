@@ -45,6 +45,7 @@ export PATH=$PATH:/usr/local/pgsql/bin
 export PATH=$PATH:/Library/PostgreSQL/8.3/bin
 
 # Unbreak broken, non-colored terminal
+alias rspec='rspec --color'
 alias ls='ls -G'
 alias ll='ls -lAG'
 alias duh='du -csh'
@@ -55,6 +56,7 @@ export GREP_OPTIONS="--color"
 if [[ $platform == 'linux' ]]; then
     export TERM=screen-256color
 fi
+alias tmux="TERM=screen-256color-bce tmux"
 
 
 # Unbreak history
