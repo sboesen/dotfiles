@@ -26,9 +26,9 @@ alias gcount='git shortlog -sn'
 compdef gcount=git
 alias gcp='git cherry-pick'
 compdef _git gcp=git-cherry-pick
-alias glg='git log --date-order --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"'
+alias glg='git log --date-order --pretty="format:%C(yellow)%h%Cblue%d%Creset %C(blue) %s %C(black) %an, %ar%Creset"'
 compdef _git glg=git-log
-alias glgg='git log --date-order --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset" --graph'
+alias glgg='git log --date-order --pretty="format:%C(yellow)%h%Cblue%d%Creset %C(blue) %s %C(black) %an, %ar%Creset" --graph'
 compdef _git glgg=git-log
 alias gss='git status -s'
 compdef _git gss=git-status
