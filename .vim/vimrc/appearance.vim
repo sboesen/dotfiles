@@ -3,7 +3,8 @@
 " =================================================
 :set t_Co=256 " 256 colors
 :set background=dark
-:color Tomorrow-Night-Eighties
+let g:hybrid_use_Xresources = 1
+:color cake16
 
 " =================================================
 " Status Line

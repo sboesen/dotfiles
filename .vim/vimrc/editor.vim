@@ -59,6 +59,7 @@ set modelines=0
 
 " Relative line numbers. The real number is in statusbar anyway
 set relativenumber 
+set number
 
 " Preserve undo information between open/closes
 set undofile
@@ -85,3 +86,7 @@ runtime macros/matchit.vim
 
 " Disable file browser for proj.vim
 let g:ProjFileBrowser = 'off'
+
+" Enable rails completion
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1

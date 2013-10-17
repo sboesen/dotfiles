@@ -16,6 +16,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-unimpaired'
 
 " Auto view tiling
 Bundle 'zhaocai/GoldenView.Vim'
@@ -34,6 +35,7 @@ Bundle 'bkad/CamelCaseMotion'
 Bundle 'airblade/vim-rooter'
 
 "" Autocomplete and snippets
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
 "Bundle 'Shougo/neocomplcache'
 "Bundle 'Shougo/neosnippet'
 "Bundle 'sboesen/snipmate-snippets'
@@ -48,6 +50,7 @@ Bundle 'sboesen/vim-less-colorscheme'
 Bundle 'sboesen/vim-tomorrow-theme'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'w0ng/vim-hybrid'
+Bundle 'zefei/cake16'
 
 " Searching
 Bundle 'mileszs/ack.vim'
