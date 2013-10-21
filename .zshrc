@@ -167,5 +167,3 @@ zle -N zle-line-finish
 if [ -f ~/.zshrc.after ]; then
   source ~/.zshrc.after
 fi
-
-eval "$(fasd --init auto)"
