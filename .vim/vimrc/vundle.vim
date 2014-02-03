@@ -17,6 +17,7 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-dispatch'
 
 " Auto view tiling
 Bundle 'zhaocai/GoldenView.Vim'
