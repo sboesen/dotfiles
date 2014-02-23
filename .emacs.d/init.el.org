@@ -1,6 +1,6 @@
 #+TITLE: Emacs Configuration
-#+AUTHOR: Jack Henahan
-#+EMAIL: jhenahan@me.com
+#+AUTHOR: Stefan Boesen
+#+EMAIL: stefan.boesen@gmail.com
 
 #+NAME: Note
 #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el :exports none
@@ -17,6 +17,8 @@
   [[https://github.com/rdallasgray/pallet][Pallet]] is a wonderful little tool built on [[https://github.com/cask/cask][Cask]], a dependency management tool
   for Emacs packages. Pallet adds automatic updating of the =Caskfile= when
   packages are installed and deleted.
+
+  Also: Remember to run (byte-recompile-directory (expand-file-name "~/.emacs.d") 0). Speeds up load times.
 
 ** Installing Cask
    Just run this command in your terminal of choice:
@@ -107,11 +109,12 @@
     
 * Projectile
   #+BEGIN_SRC emacs-list :tangle ~/.emacs.d/init.el
-    (global-set-key (kbd "C-p") 'projectile-find-file)
-    (global-set-key (kbd "C-b") 'projectile-switch-to-buffer)
     (setq projectile-indexing-method 'git)
     (setq projectile-enable-caching t)
     (projectile-global-mode t)
+    (require 'helm)
+    (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile)
+    (define-key evil-normal-state-map (kbd "C-b") 'helm-mini)
   #+END_SRC
 
 * Org
@@ -171,7 +174,6 @@
 
 * IDE
   A few conveniences that I like to have in all my =prog-mode= buffers.
-  Also: Remember to run (byte-recompile-directory (expand-file-name "~/.emacs.d") 0). Speeds up load times.
 
 
 ** Magit
