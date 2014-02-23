@@ -171,6 +171,7 @@
 
 * IDE
   A few conveniences that I like to have in all my =prog-mode= buffers.
+  Also: Remember to run (byte-recompile-directory (expand-file-name "~/.emacs.d") 0). Speeds up load times.
 
 
 ** Magit
