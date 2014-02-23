@@ -40,7 +40,6 @@
 /.eclipse
 /.emacs-places
 /.emacs.bak
-/.emacs.d
 /.erlang.cookie
 /.eshell
 /.fontconfig
