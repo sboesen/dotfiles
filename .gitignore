@@ -42,6 +42,12 @@
 /.emacs-places
 /.emacs.bak
 /.emacs.d/init.el
+/.emacs.d/eshell
+/.emacs.d/url/cookies
+/.emacs.d/projectile.cache
+/.emacs.d/projectile-bookmarks.eld
+/.emacs.d/.cask
+/.emacs.d/el-get
 /.erlang.cookie
 /.eshell
 /.fontconfig
