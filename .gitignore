@@ -1,3 +1,6 @@
+/.edurange/
+/.zshrc.after
+/Box Sync/
 *.DS_Store
 *.swp
 *.bak
@@ -106,6 +109,7 @@
 /.pypirc
 /.python-eggs
 /.rbx
+/.recentf
 /.rediscli_history
 /.rnd
 /.rubinius_last_error
