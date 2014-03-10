@@ -24,6 +24,7 @@
 /.bundle
 /.bzr.log
 /.cache
+/.cask
 /.certs
 /.cheat
 /.cocoapods
