@@ -92,9 +92,9 @@
     back without stomping all over existing bindings.
 
     #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-      ;;;(require 'evil-numbers)
-      ;;;(bind-key "C-a" 'evil-numbers/inc-at-pt evil-normal-state-map)
-      ;;;(bind-key "C-x" 'evil-numbers/dec-at-pt evil-normal-state-map)
+      (require 'evil-numbers)
+      (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
+      (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
     #+END_SRC
 
 *** =evil-surround=
@@ -115,6 +115,38 @@
       (require 'undo-tree)
     #+END_SRC
     
+** Keybinding Table
+
+#+TBLNAME: keys
+| Combo | Description                 | Mode | Command                                    |
+|-------+-----------------------------+------+--------------------------------------------|
+| gh    |                             | Org  | outline-up-heading                         |
+| gj    |                             | Org  | org-forward-heading-same-level             |
+| gk    |                             | Org  | org-backward-heading-same-level            |
+| gl    |                             | Org  | outline-next-visible-heading               |
+| t     | toggle todo state           | Org  | org-todo                                   |
+| T     |                             | Org  | org-insert-todo-heading nil                |
+| H     |                             | Org  | org-beginning-of-line                      |
+| L     |                             | Org  | org-end-of-line                            |
+| ;t    |                             | Org  | org-show-todo-tree                         |
+| o     |                             | Org  | always-insert-item                         |
+| O     |                             | Org  | org-insert-heading                         |
+| '$'   |                             | Org  | org-end-of-line                            |
+| '^'   |                             | Org  | org-beginning-of-line                      |
+| <     |                             | Org  | org-metaleft                               |
+| >     |                             | Org  | org-metaright                              |
+| ;a    | Open org-agenda-mode        | Org  | org-agenda                                 |
+| TAB   | Cycle heading visibility    | Org  | org-cycle                                  |
+| M-l   | Lower heading level         | Org  | org-metaright                              |
+| M-h   | Higher heading level        | Org  | org-metaleft                               |
+| M-k   | Swap heading with one above | Org  | org-metaup                                 |
+| M-j   | Swap heading with one below | Org  | org-metadown                               |
+| M-L   |                             | Org  | org-shiftmetaright                         |
+| M-H   |                             | Org  | org-shiftmetaleft                          |
+| M-K   |                             | Org  | org-shiftmetaup                            |
+| M-J   |                             | Org  | org-shiftmetadown                          |
+| M-o   | Insert heading, nested      | Org  | org-insert-heading+org-metaright           |
+| M-t   | Insert todo, nested         | Org  | org-insert-todo-heading nil+ org-metaright |
 * Projectile
   #+BEGIN_SRC emacs-list :tangle ~/.emacs.d/init.el
     (setq projectile-indexing-method 'git)
@@ -124,7 +156,13 @@
     (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile)
     (define-key evil-normal-state-map (kbd "C-b") 'helm-mini)
   #+END_SRC
-
+* W3M
+   This just sets w3m to use images and sets w3m to be default browser.
+   #+BEGIN_SRC emacs-list :tangle ~/.emacs.d/init.el
+     (setq w3m-default-display-inline-images t)
+     (setq browse-url-browser-function 'w3m-browse-url)
+     (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+   #+END_SRC
 * Org
   #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
     (require 'org)
@@ -220,9 +258,9 @@
      (setq auto-save-file-name-transforms
 	   `((".*" ,temporary-file-directory t)))
    #+END_SRC
-** Questions
-   Keep it short.
+** Set PATH, exec-path, etc equal to terminal values
 
    #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-     (defalias 'yes-or-no-p 'y-or-n-p)
+    (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize))
    #+END_SRC

@@ -1,9 +1,6 @@
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/games/bin:/usr/local/share/npm/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 setopt promptsubst
-autoload -U promptinit
-promptinit
-prompt grb
 
 # Detect OS
 platform='unknown'
@@ -82,6 +79,7 @@ alias cls="clear"
 alias rcp="rails-console-pry -r pry-doc -r awesome_print"
 if [[ $platform == 'osx' ]]; then
     alias vim="mvim -v"
+    alias emacs='open -a /Applications/Emacs.app $1'
 fi
 
 function mcd() { mkdir -p $1 && cd $1 }
