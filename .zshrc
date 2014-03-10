@@ -165,3 +165,4 @@ zle -N zle-line-finish
 if [ -f ~/.zshrc.after ]; then
   source ~/.zshrc.after
 fi
+alias sdf="ssh zerocool@iceland.sdf.org"
