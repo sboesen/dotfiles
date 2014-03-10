@@ -2,6 +2,7 @@
 *.swp
 *.bak
 *._*
+\#*#
 /.ApacheDirectoryStudio
 /.CFUserTextEncoding
 /.ICEauthority
