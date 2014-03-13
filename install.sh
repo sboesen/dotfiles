@@ -41,3 +41,6 @@ rm $HOME/install.sh
 rm $HOME/README.md
 git update-index --assume-unchanged $HOME/install.sh
 git update-index --assume-unchanged $HOME/README.md
+
+# Install cask for emacs
+curl -fsSkL https://raw.github.com/cask/cask/master/go | python
