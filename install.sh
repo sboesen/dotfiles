@@ -44,3 +44,5 @@ git update-index --assume-unchanged $HOME/README.md
 
 # Install cask for emacs
 curl -fsSkL https://raw.github.com/cask/cask/master/go | python
+cd ~/.emacs.d
+~/.cask/bin/cask install
