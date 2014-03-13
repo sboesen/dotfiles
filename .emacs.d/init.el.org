@@ -58,6 +58,7 @@
     (evil-set-initial-state 'org-capture-mode 'insert)
 
     (evil-ex-define-cmd "ta[ngle]" 'org-babel-tangle)
+    (evil-ex-define-cmd "ma[git]" 'magit-status)
     ;;; C-c as general purpose escape key sequence.
     ;;;
     (defun my-esc (prompt)
@@ -79,6 +80,10 @@
     (require 'evil-org)
 
 
+(require 'auto-complete)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/.cask/24.3.1/elpa/auto-complete-20140208.653")
+(require 'auto-complete-config)
+(ac-config-default)
 
 
    #+END_SRC
@@ -169,23 +174,8 @@
 
     (setq org-default-notes-file "~/notes/inbox.org")
 
-    (define-key key-translation-map (kbd "zt") (kbd "M-p M-r"))
-    (define-key evil-normal-state-map  (kbd "M-p M-r") 'org-todo) ;; Rotate todo state
+    (setq org-src-fontify-natively t)
 
-    (define-key key-translation-map (kbd "zT") (kbd "M-a M-t"))
-    (define-key evil-normal-state-map  (kbd "M-a M-t") 'org-todo-list) ;; Global todo list
-
-    (define-key key-translation-map (kbd "zl") (kbd "M-a M-d"))
-    (define-key evil-normal-state-map (kbd "M-a M-d") 'org-insert-todo-heading) ;; Add new todo
-
-    (define-key key-translation-map (kbd "za") (kbd "M-a M-k"))
-    (define-key evil-normal-state-map (kbd "M-a M-k") 'org-agenda-file-to-front) ;; 
-
-    (define-key key-translation-map (kbd "zc") (kbd "M-a M-c"))
-    (define-key evil-normal-state-map (kbd "M-a M-c") 'org-cycle) ;; 
-
-    (define-key key-translation-map (kbd "zg") (kbd "M-a M-g"))
-    (define-key evil-normal-state-map (kbd "M-a M-g") 'org-global-cycle)
   #+END_SRC
 * UI
   I'm pretty picky about how I want my editor to look, so there's a fair bit of
@@ -221,6 +211,11 @@
 * IDE
   A few conveniences that I like to have in all my =prog-mode= buffers.
 
+** Ruby Mode
+  (add-to-list 'auto-mode-alist
+               '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
+  (add-to-list 'auto-mode-alist
+               '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
 ** Eshell
    #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
       (require 'eshell)
@@ -254,6 +249,10 @@
 * Annoyances
   Fixing a couple of gripes I have with Emacs.
 
+** Ignore bell sound
+   #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+     (setq ring-bell-function #'ignore)
+   #+END_SRC
 ** Backups and Autosave Files
    These things end up everywhere, so let's stick them all in a temporary
    directory.

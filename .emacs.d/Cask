@@ -2,7 +2,9 @@
 (source gnu)
 (source marmalade)
 
+(depends-on "abc-mode")
 (depends-on "auctex")
+(depends-on "auto-complete")
 (depends-on "bind-key")
 (depends-on "color-identifiers-mode")
 (depends-on "dash")
@@ -35,6 +37,7 @@
 (depends-on "req-package")
 (depends-on "robe")
 (depends-on "ruby-mode")
+(depends-on "rvm")
 (depends-on "smart-mode-line")
 (depends-on "smartparens")
 (depends-on "surround")
