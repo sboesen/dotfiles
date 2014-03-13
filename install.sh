@@ -22,21 +22,6 @@ mv -f -v * ..
 cd $HOME/.vim/bundle/vundle
 git checkout master
 
-echo "updating plugins using Vundle"
-echo "vim is going to yell, press enter when it does. Press enter to acknowledge this message."
-read stuff
-
-system_shell=$SHELL
-export SHELL="/bin/sh"
-vim +BundleInstall! +BundleClean +qall
-export SHELL=$system_shell
-
-echo "compiling command-t support..."
-cd $HOME/.vim/bundle/Command-T/ruby/command-t/
-/usr/bin/ruby extconf.rb
-make
-cd
-echo "Done installing!"
 rm $HOME/install.sh
 rm $HOME/README.md
 git update-index --assume-unchanged $HOME/install.sh
