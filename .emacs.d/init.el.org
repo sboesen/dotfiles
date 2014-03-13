@@ -221,7 +221,14 @@
 * IDE
   A few conveniences that I like to have in all my =prog-mode= buffers.
 
-
+** Eshell
+   #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+      (require 'eshell)
+      (require 'em-smart)
+      (setq eshell-where-to-jump 'begin)
+      (setq eshell-review-quick-commands nil)
+      (setq eshell-smart-space-goes-to-end t)
+   #+END_SRC
 ** Magit
    The only git wrapper that matters.
 

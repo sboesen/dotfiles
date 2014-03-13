@@ -11,7 +11,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    platform='osx'
 fi
 
-plugins=(git rails3 autojump rvm zsh-syntax-highlighting zeus)
+plugins=(git rails3 autojump rvm zeus)
 
 for plugin ($plugins); do
   fpath=(~/.zsh_plugins/$plugin $fpath)
@@ -43,8 +43,6 @@ export PATH=$PATH:/Library/PostgreSQL/8.3/bin
 
 # Unbreak broken, non-colored terminal
 alias rspec='rspec --color'
-alias ls='ls -G'
-alias ll='ls -lAG'
 alias duh='du -csh'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
@@ -78,6 +76,8 @@ alias la=lla
 alias cls="clear"
 alias rcp="rails-console-pry -r pry-doc -r awesome_print"
 if [[ $platform == 'osx' ]]; then
+    alias ls='ls -G'
+    alias ll='ls -lAG'
     alias vim="mvim -v"
     alias emacs='open -a /Applications/Emacs.app $1'
 fi
