@@ -4,3 +4,6 @@
 [submodule ".zsh_plugins/fasd"]
 	path = .zsh_plugins/fasd
 	url = git://github.com/clvv/fasd.git
+[submodule ".cask"]
+	path = .cask
+	url = https://github.com/cask/cask.git
