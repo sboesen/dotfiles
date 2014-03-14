@@ -166,3 +166,4 @@ if [ -f ~/.zshrc.after ]; then
   source ~/.zshrc.after
 fi
 alias sdf="ssh zerocool@iceland.sdf.org"
+alias nethack="telnet nethack.alt.org"
