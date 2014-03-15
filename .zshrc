@@ -167,3 +167,4 @@ if [ -f ~/.zshrc.after ]; then
 fi
 alias sdf="ssh zerocool@iceland.sdf.org"
 alias nethack="telnet nethack.alt.org"
+alias irssi='TERM=screen-256color irssi'
