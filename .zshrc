@@ -165,6 +165,6 @@ zle -N zle-line-finish
 if [ -f ~/.zshrc.after ]; then
   source ~/.zshrc.after
 fi
-alias sdf="ssh zerocool@iceland.sdf.org"
+alias sdf="mosh zerocool@ma.sdf.org"
 alias nethack="telnet nethack.alt.org"
 alias irssi='TERM=screen-256color irssi'
