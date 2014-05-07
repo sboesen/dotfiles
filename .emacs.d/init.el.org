@@ -152,13 +152,11 @@
 | M-J   |                             | Org  | org-shiftmetadown                          |
 | M-o   | Insert heading, nested      | Org  | org-insert-heading+org-metaright           |
 | M-t   | Insert todo, nested         | Org  | org-insert-todo-heading nil+ org-metaright |
-* Projectile
+* fiplr
   #+BEGIN_SRC emacs-list :tangle ~/.emacs.d/init.el
-    (setq projectile-indexing-method 'git)
-    (setq projectile-enable-caching t)
-    (projectile-global-mode t)
+    (require 'fiplr)
     (require 'helm)
-    (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile)
+    (define-key evil-normal-state-map (kbd "C-p") 'fiplr-find-file)
     (define-key evil-normal-state-map (kbd "C-b") 'helm-mini)
   #+END_SRC
 * W3M
