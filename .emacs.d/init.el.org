@@ -35,84 +35,7 @@
    
 * Keybindings
 
-** =evil=
-   I always want evil to be loaded, and to be the default mode. Bind a few ex.
-
-   #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-    (setq evil-default-cursor t)
-    (setq evil-want-C-u-scroll t)
-    (require 'evil)
-    (evil-mode 1)
-
-    (defun my-move-key (keymap-from keymap-to key)
-      "Moves key binding from one keymap to another, deleting from the old location. "
-      (define-key keymap-to key (lookup-key keymap-from key))
-      (define-key keymap-from key nil))
-
-    (my-move-key evil-motion-state-map evil-normal-state-map (kbd "RET"))
-    (my-move-key evil-motion-state-map evil-normal-state-map " ")
-
-    (define-key evil-normal-state-map "H" 'evil-first-non-blank)
-    (define-key evil-normal-state-map ",," 'evil-buffer)
-
-    (evil-set-initial-state 'org-capture-mode 'insert)
-
-    (evil-ex-define-cmd "ta[ngle]" 'org-babel-tangle)
-    (evil-ex-define-cmd "ma[git]" 'magit-status)
-    ;;; C-c as general purpose escape key sequence.
-    ;;;
-    (defun my-esc (prompt)
-      "Functionality for escaping generally.  Includes exiting Evil insert state and C-g binding. "
-      (cond
-       ;; If we're in one of the Evil states that defines [escape] key, return [escape] so as
-       ;; Key Lookup will use it.
-       ((or (evil-insert-state-p) (evil-normal-state-p) (evil-replace-state-p) (evil-visual-state-p)) [escape])
-       ;; This is the best way I could infer for now to have C-c work during evil-read-key.
-       ;; Note: As long as I return [escape] in normal-state, I don't need this.
-       ;;((eq overriding-terminal-local-map evil-read-key-map) (keyboard-quit) (kbd ""))
-       (t (kbd "C-g"))))
-    (define-key key-translation-map (kbd "C-c") 'my-esc)
-    ;; Works around the fact that Evil uses read-event directly when in operator state, which
-    ;; doesn't use the key-translation-map.
-    (define-key evil-operator-state-map (kbd "C-c") 'keyboard-quit)
-
-    (add-to-list 'load-path "~/.emacs.d/plugins/evil-org-mode")
-    (require 'evil-org)
-
-
-(require 'auto-complete)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/.cask/24.3.1/elpa/auto-complete-20140208.653")
-(require 'auto-complete-config)
-(ac-config-default)
-
-
-   #+END_SRC
-   
-
-*** =evil-numbers=
-    One of the little Vim conveniences not found in vanilla Evil is incrementing
-    and decrementing numbers with =C-a= and =C-x=, respectively, likely because
-    these are already important bindings in Emacs. However, by limiting the
-    effect to normal mode, we can use [[https://github.com/cofi/evil-numbers][evil-numbers]] to bring this functionality
-    back without stomping all over existing bindings.
-
-    #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-      (require 'evil-numbers)
-      (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
-      (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
-    #+END_SRC
-
-*** =evil-surround=
-    Working with delimiter pairs is common enough that Tim Pope wrote a plugin
-    to ease working with them in Vim, called [[https://github.com/tpope/vim-surround][vim-surround]]. [[https://github.com/timcharper/evil-surround][evil-surround]]
-    emulates this functionality in =evil=. It's quite extensible, but the
-    defaults seem to cover all my needs. Check out the README for some examples.
-
-    #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-      (require 'surround)
-    #+END_SRC
-
-*** =undo-tree=
+** =undo-tree=
     Standard Emacs undo is kind of confusing. [[http://www.dr-qubit.org/emacs.php#undo-tree][undo-tree]] replaces this with a
     simpler tree structure. It also allows us to visualize the tree directly.
 
@@ -125,76 +48,55 @@
 #+TBLNAME: keys
 | Combo | Description                 | Mode | Command                                    |
 |-------+-----------------------------+------+--------------------------------------------|
-| gh    |                             | Org  | outline-up-heading                         |
-| gj    |                             | Org  | org-forward-heading-same-level             |
-| gk    |                             | Org  | org-backward-heading-same-level            |
-| gl    |                             | Org  | outline-next-visible-heading               |
-| t     | toggle todo state           | Org  | org-todo                                   |
-| T     |                             | Org  | org-insert-todo-heading nil                |
-| H     |                             | Org  | org-beginning-of-line                      |
-| L     |                             | Org  | org-end-of-line                            |
-| ;t    |                             | Org  | org-show-todo-tree                         |
-| o     |                             | Org  | always-insert-item                         |
-| O     |                             | Org  | org-insert-heading                         |
-| '$'   |                             | Org  | org-end-of-line                            |
-| '^'   |                             | Org  | org-beginning-of-line                      |
-| <     |                             | Org  | org-metaleft                               |
-| >     |                             | Org  | org-metaright                              |
-| ;a    | Open org-agenda-mode        | Org  | org-agenda                                 |
 | TAB   | Cycle heading visibility    | Org  | org-cycle                                  |
-| M-l   | Lower heading level         | Org  | org-metaright                              |
-| M-h   | Higher heading level        | Org  | org-metaleft                               |
-| M-k   | Swap heading with one above | Org  | org-metaup                                 |
-| M-j   | Swap heading with one below | Org  | org-metadown                               |
-| M-L   |                             | Org  | org-shiftmetaright                         |
-| M-H   |                             | Org  | org-shiftmetaleft                          |
-| M-K   |                             | Org  | org-shiftmetaup                            |
-| M-J   |                             | Org  | org-shiftmetadown                          |
-| M-o   | Insert heading, nested      | Org  | org-insert-heading+org-metaright           |
-| M-t   | Insert todo, nested         | Org  | org-insert-todo-heading nil+ org-metaright |
+
 * fiplr
   #+BEGIN_SRC emacs-list :tangle ~/.emacs.d/init.el
     (require 'fiplr)
     (require 'helm)
-    (define-key evil-normal-state-map (kbd "C-p") 'fiplr-find-file)
-    (define-key evil-normal-state-map (kbd "C-b") 'helm-mini)
+    (global-set-key (kbd "C-t") 'fiplr-find-file)
+    (global-set-key (kbd "C-b") 'helm-mini)
   #+END_SRC
 * W3M
    This just sets w3m to use images and sets w3m to be default browser.
-   #+BEGIN_SRC emacs-list :tangle ~/.emacs.d/init.el
+   #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
      (setq w3m-default-display-inline-images t)
      (setq browse-url-browser-function 'w3m-browse-url)
      (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
    #+END_SRC
+* ZNC
+  #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+    (require 'znc)
+  #+END_SRC
 * Org
   #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
     (require 'org)
 
-    (setq org-default-notes-file "~/notes/inbox.org")
+    (setq org-default-notes-file "~/.notes/inbox.org")
 
     (setq org-src-fontify-natively t)
-
+    (global-set-key (kbd "C-c l") 'org-store-link)
+    (global-set-key (kbd "C-c a") 'org-agenda)
+    
+  #+END_SRC
+* ERC
+  Set the width for messages to be displayed
+  #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+    (setq erc-fill-column 120)
   #+END_SRC
 * UI
-  I'm pretty picky about how I want my editor to look, so there's a fair bit of
-  configuration that goes here.
-
+** Switch Window
+  Bind C-x o to switch-window
+  #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+    (require 'switch-window)
+    (global-set-key (kbd "C-x o") 'switch-window)
+  #+END_SRC
 ** Theme
 
     #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
     (add-to-list 'custom-theme-load-path
 		 (file-name-as-directory "~/.emacs.d/themes/"))
     (load-theme 'zenburn t)
-    #+END_SRC
-** Modeline
-   Powerline is very popular in Vim (and with Evil users), but I much prefer
-   [[https://github.com/Bruce-Connor/smart-mode-line][smart-mode-line]]. It's compatible with just about anything you can imagine,
-   and it's easy to set up.
-
-   
-*** =smart-mode-line=
-    #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-    (require 'smart-mode-line)
     #+END_SRC
 
 ** Cleanup
@@ -205,22 +107,20 @@
      
     (menu-bar-mode -1)
    #+END_SRC
-
+   
 * IDE
   A few conveniences that I like to have in all my =prog-mode= buffers.
 
 ** Ruby Mode
+  #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
   (add-to-list 'auto-mode-alist
                '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
   (add-to-list 'auto-mode-alist
                '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
+  #+END_SRC
 ** Eshell
    #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
       (require 'eshell)
-      (require 'em-smart)
-      (setq eshell-where-to-jump 'begin)
-      (setq eshell-review-quick-commands nil)
-      (setq eshell-smart-space-goes-to-end t)
    #+END_SRC
 ** Magit
    The only git wrapper that matters.
@@ -233,15 +133,6 @@
      (require 'linum)
      (linum-mode 1)
    #+END_SRC
-
-*** Relative Line Numbers
-    I was a little spoiled by this feature in Vim, and not having it
-    just doesn't sit well with me.
-
-    #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
-      (setq linum-relative-current-symbol "")
-      (require 'linum-relative)
-    #+END_SRC
 
 
 * Annoyances
@@ -268,4 +159,12 @@
    #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
     (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize))
+   #+END_SRC
+** Set customize-group file to be out of version control
+   This file contains the password to auth with ZNC, amongst other things.
+   Any non-local config is done in init.el.org instead.
+   
+   #+BEGIN_SRC emacs-lisp :tangle ~/.emacs.d/init.el
+     (setq custom-file "~/.emacs.d/custom.el")
+     (load custom-file)
    #+END_SRC
