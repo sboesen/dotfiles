@@ -7,6 +7,3 @@
 [submodule ".cask"]
 	path = .cask
 	url = https://github.com/cask/cask.git
-[submodule ".emacs.d/plugins/evil-org-mode"]
-	path = .emacs.d/plugins/evil-org-mode
-	url = https://github.com/edwtjo/evil-org-mode.git
