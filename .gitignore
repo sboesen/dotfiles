@@ -164,6 +164,7 @@
 /Library/*
 !/Library/KeyBindings
 !/Library/AppleScripts
+/Mail
 /Movies
 /Music
 /Pictures
