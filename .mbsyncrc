@@ -1,0 +1,25 @@
+IMAPAccount VPS
+Host boesen.me
+User stefan
+PassCmd "/usr/bin/security find-internet-password -w -a stefan -s boesen.me ~/Library/Keychains/login.keychain"
+#CertificateFile ~/GMail/gmail.pem
+
+IMAPStore VPS-remote
+Account VPS
+
+MaildirStore VPS-local
+Path ~/Mail/VPS
+Inbox ~/Mail/VPS/Inbox
+
+Channel VPS
+Master :VPS-remote:
+Slave :VPS-local:
+# Exclude everything under the internal [Gmail] folder, except the interesting folders
+Patterns *
+Create Slave
+Expunge Slave
+Sync Pull
+
+#Here's how to use it on MacOS:
+#1) run "KeyChain Access" -- File->New Password Item. Fill out form using "Keychain Item Name" http://IMAPSERVER, "Account Name" USERNAME, "Password" PASSWORD (note: the "http://" in the item name is necessary for Mac OS to recognise it as internet password)
+#2) add to .mbsyncrc: PassCmd "/usr/bin/security find-internet-password -w -a USERNAME -s IMAPSERVER ~/Library/Keychains/login.keychain"
