@@ -22,14 +22,14 @@
 						 ("melpa" . "http://melpa.milkbox.net/packages/")
 						 ("sunrise" . "http://joseito.republika.pl/sunrise-commander/")))
 
-(add-to-list 'load-path "~/.emacs.d/")
+;;;(add-to-list 'load-path "~/.emacs.d/")
 
 (defun package-try-install (package)
   "installs package if not installed"
   (let* ((ARCHIVES (if (null package-archive-contents)
                        (progn (package-refresh-contents)
                               package-archive-contents)
-                     package-archive-contents))
+                    package-archive-contents))
          (AVAIL (some (lambda (elem)
                         (eq (car elem) package))
                       ARCHIVES)))
@@ -72,8 +72,33 @@
     (when (memq window-system '(mac ns))
       (exec-path-from-shell-initialize))))
 
+(req-package dart-mode)
 
-(add-to-list 'load-path "/usr/local/Cellar/mu/0.9.9.6/share/emacs/site-lisp/mu4e")
+(req-package flycheck
+  :init
+  (progn
+    (add-hook 'after-init-hook #'global-flycheck-mode)))
+
+; Need to install ycmd manually. Should be able to put it in
+; submodule list. Install to .emacs.d/ycmd. Though will that work with changes?
+; maybe shell script.
+(req-package ycmd
+  :init
+  (progn
+    (set-variable 'ycmd-server-command '("python2" "/Users/stefan/.emacs.d/ycmd/ycmd/__main__.py"))
+    (set-variable 'ycmd-global-config "/Users/stefan/.emacs.d/.ycm_extra_conf.py")
+    (ycmd-setup)))
+(req-package company-ycmd
+  :init
+  (progn
+    (company-ycmd-setup)))
+
+(req-package company-mode
+  :init
+  (progn
+    (add-hook 'after-init-hook 'global-company-mode)))
+
+(add-to-list 'load-path "/usr/local/Cellar/mu/0.9.10/share/emacs/site-lisp/mu4e")
 (setq mu4e-maildir "/Users/stefan/Mail/")
 (setq mu4e-sent-folder "/VPSSent")
 (setq mu4e-drafts-folder "/VPSDrafts")
