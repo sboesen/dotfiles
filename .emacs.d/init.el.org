@@ -98,37 +98,6 @@
   (progn
     (add-hook 'after-init-hook 'global-company-mode)))
 
-(add-to-list 'load-path "/usr/local/Cellar/mu/0.9.10/share/emacs/site-lisp/mu4e")
-(setq mu4e-maildir "/Users/stefan/Mail/")
-(setq mu4e-sent-folder "/VPSSent")
-(setq mu4e-drafts-folder "/VPSDrafts")
-(setq mu4e-trash-folder "/VPSTrash")
-(setq mu4e-refile-folder "/VPSArchive")
-(setq mu4e-attachment-dir "~/Mail/Attachments")
-
-(setq mu4e-get-mail-command "mbsync -a")
-
-(setq
-  message-send-mail-function 'smtpmail-send-it
-  starttls-use-gnutls t
-  smtpmail-starttls-credentials
-    '(("boesen.me" 587 nil nil))
-  smtpmail-auth-credentials
-    '(("boesen.me" 587 "stefan" nil))
-  smtpmail-default-smtp-server "boesen.me"
-  smtpmail-smtp-server "boesen.me"
-  smtpmail-debug-info t
-  smtpmail-smtp-service 587)
-
-(setq
-  user-mail-address "stefan@boesen.me"
-  user-full-name "Stefan Boesen"
-  mu4e-compose-signature
-    (concat
-      "Stefan\n"))
-(require 'mu4e)
-
-
 (req-package-finish)
 
 #+END_SRC
