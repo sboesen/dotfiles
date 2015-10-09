@@ -43,6 +43,15 @@
     (progn (package-try-install 'req-package)
            (require 'req-package)))
 
+(req-package evil-leader
+  :init
+  (progn
+    (global-evil-leader-mode))
+  :config
+  (progn
+    (evil-leader/set-leader ",") 
+    (evil-leader/set-key "," 'evil-buffer)
+    (evil-leader/set-key "t" 'find-tag)))
 
 (setq evil-want-C-u-scroll t)
 (req-package evil
