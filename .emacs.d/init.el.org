@@ -58,7 +58,7 @@
     (evil-leader/set-key "g" 'helm-gtags-find-tag-from-here)
     (evil-leader/set-key "." 'helm-gtags-next-history)
     (evil-leader/set-key "m" 'helm-gtags-previous-history)
-    (evil-leader/set-key "f" 'helm-gtags-find-files)
+    (evil-leader/set-key "f" 'helm-find-files)
     (evil-leader/set-key "t" 'helm-gtags-dwim)))
 
 (setq evil-want-C-u-scroll t)
