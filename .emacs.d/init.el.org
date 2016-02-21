@@ -51,7 +51,15 @@
   (progn
     (evil-leader/set-leader ",") 
     (evil-leader/set-key "," 'evil-buffer)
-    (evil-leader/set-key "t" 'find-tag)))
+    (evil-leader/set-key "a" 'helm-ag)
+    (evil-leader/set-key "c"  (lambda() (interactive)(find-file "~/.emacs.d/init.el.org")))
+    (evil-leader/set-key "r"  'helm-gtags-parse-file)
+    (evil-leader/set-key "s"  'helm-gtags-select)
+    (evil-leader/set-key "g" 'helm-gtags-find-tag-from-here)
+    (evil-leader/set-key "." 'helm-gtags-next-history)
+    (evil-leader/set-key "m" 'helm-gtags-previous-history)
+    (evil-leader/set-key "f" 'helm-gtags-find-files)
+    (evil-leader/set-key "t" 'helm-gtags-dwim)))
 
 (setq evil-want-C-u-scroll t)
 (req-package evil
@@ -102,10 +110,21 @@
   (progn
     (company-ycmd-setup)))
 
-(req-package company-mode
+(req-package company-mode)
+
+(req-package helm)
+
+(req-package helm-ag
   :init
   (progn
-    (add-hook 'after-init-hook 'global-company-mode)))
+    (evil-ex-define-cmd "ag" 'helm-ag)))
+
+(req-package helm-gtags)
+; make sure to set these in bashrc...
+; export GTAGSCONF=/usr/local/share/gtags/gtags.conf
+; export GTAGSLABEL=exuberant-ctags
+
+
 
 (req-package-finish)
 
